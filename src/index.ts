@@ -65,14 +65,16 @@ export class Logicus<T> implements LogicusType<T> {
       /* @ts-ignore */
       logFunction(logContent);
     }
+    const badgeAlpha = 0.3;
     const logo = logSettings!.associatedEmoji
       ? ` ${logSettings!.associatedEmoji}`
       : "";
     const rgbColor = logSettings!.color.join(",");
     const message = `%c${logo} ${logSettings!.name} %c ${logContent}`;
-    const customSettings = `background: rgba(${rgbColor}, .3); padding: 4px; border-radius: 100px; font-weight: bold; color: ${contrastingColor(
-      logSettings!.color
-    )}; border: 1px solid ${contrastingColor(logSettings!.color)}`;
+    const customSettings = `background: rgba(${rgbColor}, ${badgeAlpha}); padding: 4px; border-radius: 100px; font-weight: bold; color: ${contrastingColor(
+      logSettings!.color,
+      badgeAlpha
+    )}; border: 1px solid ${contrastingColor(logSettings!.color, badgeAlpha)}`;
     const defaultSettings = `background: transparent`;
 
     /* @ts-ignore */
