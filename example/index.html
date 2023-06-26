@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Logicus! Your log genious!</title>
+    <meta name="description" content="Our first page">
+    <meta name="keywords" content="html tutorial template">
+    <style> body{margin: 0;}</style>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <p>
+        Press F8 to start the magic!
+    </p>
+
+    <div style="display: flex; gap: 8px;">
+        <button id="1">Log a 🐦!</button>
+        <button id="2">Log a 🐱!</button>
+        <button id="3">Log a 🐕!</button>
+    </div>
+
+<script type="module">
+    import {Logicus} from "./index.js"
+        const myLogicus = new Logicus(
+            [
+                {
+                    name: "pidgeon",
+                    id: 1,
+                    associatedEmoji: "🐦",
+                    color: [33, 33, 33],
+                    logImportance: 1,
+                },
+                {
+                    name: "cat",
+                    id: 2,
+                    associatedEmoji: "🐱",
+                    color: [255, 222, 52],
+                    logImportance: 1,
+                },
+                {
+                    name: "dog",
+                    id: 3,
+                    associatedEmoji: "🐕",
+                    color: [255, 228, 196],
+                    logImportance: 1,
+                },
+            ],
+            true
+        );
+
+       document.getElementById(1).onclick = () => myLogicus.log(1, "Look, a pidgeon!")
+       document.getElementById(2).onclick = () => myLogicus.log(2, "Look, a cat!")
+    document.getElementById(3).onclick = () => myLogicus.log(3, "Look, a dog!")
+</script>
+</body>
+
+</html>
+

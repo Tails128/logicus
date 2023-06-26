@@ -1,0 +1,22 @@
+.logicus{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.logicus-button{
+    cursor: pointer;
+}
+
+.logicus-button.not-selected{
+    opacity: 0.4;
+}
+
+#logicus-command-panel{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 16px 8px;
+    background: #D3D3D3;
+    border-top: 1px solid black
+}
