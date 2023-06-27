@@ -7,8 +7,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "example": "node ./example/index.js",
-    "build": "cp ./logicus-style.css ./dist/index.css && tsc"
+    "example": "npm run build && node ./example/index.js",
+    "build": "mkdir -p dist && cp ./logicus-style.css ./dist/index.css && tsc"
   },
   "repository": {
     "type": "git",
