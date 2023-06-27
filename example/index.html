@@ -11,7 +11,7 @@
 
 <body>
     <p>
-        Press F8 to start the magic!
+        Press CTRL+L to start the magic!
     </p>
 
     <div style="display: flex; gap: 8px;">
@@ -46,7 +46,11 @@
                     logImportance: 1,
                 },
             ],
-            true
+            true,
+            {
+                key: 'L',
+                ctrl: true,
+            }
         );
 
        document.getElementById(1).onclick = () => myLogicus.log(1, "Look, a pidgeon!")
