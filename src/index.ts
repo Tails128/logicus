@@ -39,22 +39,22 @@ export class Logicus<T> implements LogicusType<T> {
     return [...this.levels];
   }
 
-  log(logtype: T, logContent: any) {
+  log(logtype: T, ...logContent: any) {
     /* @ts-ignore */
     this._log(logtype, logContent, console.log);
   }
 
-  warn(logtype: T, logContent: any) {
+  warn(logtype: T, ...logContent: any) {
     /* @ts-ignore */
     this._log(logtype, logContent, console.warn);
   }
 
-  error(logtype: T, logContent: any) {
+  error(logtype: T, ...logContent: any) {
     /* @ts-ignore */
     this._log(logtype, logContent, console.error);
   }
 
-  _log(logType: T, logContent: any, logFunction: any) {
+  _log(logType: T, logContent: any[], logFunction: any) {
     const logSettings = this.levels.find((level) => level.id === logType);
     if (!logSettings) {
       const types = this.levels.map((level) => `${level.id}\n`);
@@ -75,10 +75,9 @@ export class Logicus<T> implements LogicusType<T> {
       logSettings!.color,
       badgeAlpha
     )}; border: 1px solid ${contrastingColor(logSettings!.color, badgeAlpha)}`;
-    const defaultSettings = `background: transparent`;
 
     /* @ts-ignore */
-    logFunction(message, customSettings, defaultSettings);
+    logFunction(message, customSettings, ...logContent);
   }
 
   enableLog(logType: T) {
