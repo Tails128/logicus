@@ -57,6 +57,7 @@ function renderButtons<T>(logicusInstance: Logicus<T>) {
     button.classList.add("logicus-button");
     button.style.background = `rgb(${level.color[0]},${level.color[1]},${level.color[2]})`;
     button.style.borderRadius = "12px";
+    button.style.border = `2px solid ${contrastingColor(level.color)}`;
     button.style.color = contrastingColor(level.color);
     button.innerHTML = `${level.associatedEmoji} | ${level.logImportance} | ${level.name}`;
     button.addEventListener("click", () => {
