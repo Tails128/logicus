@@ -70,7 +70,7 @@ export class Logicus<T> implements LogicusType<T> {
       ? ` ${logSettings!.associatedEmoji}`
       : "";
     const rgbColor = logSettings!.color.join(",");
-    const message = `%c${logo} ${logSettings!.name} %c ${logContent}`;
+    const message = `%c${logo} ${logSettings!.name} `;
     const customSettings = `background: rgba(${rgbColor}, ${badgeAlpha}); padding: 4px; border-radius: 100px; font-weight: bold; color: ${contrastingColor(
       logSettings!.color,
       badgeAlpha
