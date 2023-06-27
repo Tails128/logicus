@@ -12,7 +12,7 @@ export function renderHTML<T>(logicusInstance: Logicus<T>) {
     document.addEventListener("keydown", (event: KeyboardEvent) => {
       const { key, alt, ctrl, shift } = logicusInstance.keyCombination;
       const trigger =
-        event.key === key &&
+        event.key.toLowerCase() === key.toLowerCase() &&
         (!alt || event.altKey) &&
         (!ctrl || event.ctrlKey) &&
         (!shift || event.shiftKey);
