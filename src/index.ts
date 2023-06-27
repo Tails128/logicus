@@ -65,6 +65,11 @@ export class Logicus<T> implements LogicusType<T> {
       /* @ts-ignore */
       logFunction(logContent);
     }
+    const logEnabled = this.levelStatus.get(logType) || false;
+    if (!logEnabled) {
+      return;
+    }
+
     const badgeAlpha = 0.3;
     const logo = logSettings!.associatedEmoji
       ? ` ${logSettings!.associatedEmoji}`
